@@ -29,7 +29,7 @@ namespace BinaryTree.Objects
 		public override string ToString()
 		{
 			string stampadato = IsRoot ? "Root" : IsLeaf ? "Leaf" : "";
-			return $"{StampaLivello(Level)}{GetData(Data)}(Level: {Level}) {stampadato}";
+			return $"{StampaLivelloRicorsivo(Level)}{GetData(Data)}(Level: {Level}) {stampadato}";
 		}
 
 		private string GetData(T? data)
@@ -61,6 +61,14 @@ namespace BinaryTree.Objects
 				retVal += "-->";
 			}
 			return retVal!;
+		}
+		private string StampaLivelloRicorsivo(int level)
+		{
+			if (level== 0)
+			{
+				return "";
+			}
+			 return $"-->{StampaLivelloRicorsivo(level-1)}";
 		}
 	}
 }
