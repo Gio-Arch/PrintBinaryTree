@@ -55,8 +55,4 @@ var root = new TreeNode<string?>("root", null);
 	}
 }
 
-
-
-
 Output.PrintTree(root);
-

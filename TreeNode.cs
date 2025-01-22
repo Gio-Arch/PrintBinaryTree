@@ -9,7 +9,7 @@ namespace BinaryTree.Objects
 		public ICollection<TreeNode<T>> Children { get; set; }
 
 		public bool IsRoot => Parent == null;
-		public bool IsLeaf => !Children.Any();
+		public bool IsLeaf => Children.Count==0;
 		public int Level => IsRoot ? 1 : Parent!.Level +1;
 
 		public TreeNode(T data, TreeNode<T>? parent)
@@ -53,10 +53,10 @@ namespace BinaryTree.Objects
 			}
 		}
 
-		private object StampaLivello(int level)
+		private string StampaLivello(int level)
 		{
 			string retVal = null;
-			for (int i = 0; i < level; i++) 
+			for (int i = 0; i < level; i++)
 			{
 				retVal += "-->";
 			}
